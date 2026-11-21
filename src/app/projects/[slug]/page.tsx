@@ -25,20 +25,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  // Las redes sociales no aceptan SVG como og:image; en ese caso usamos el avatar
+  const ogImage = project.image.endsWith('.svg') ? '/avatar.png' : project.image;
+
   return {
     title: project.title,
     description: project.description,
     openGraph: {
       title: project.title,
       description: project.description,
-      images: [project.image],
+      images: [ogImage],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
-      images: [project.image],
+      images: [ogImage],
     },
   };
 }
@@ -108,7 +111,21 @@ export default async function ProjectDetailPage({ params }: Props) {
           />
         </div>
 
-        <section className="mt-12 rounded-2xl border border-line bg-surface/70 p-6 sm:p-8">
+        {project.highlights && project.highlights.length > 0 && (
+          <section className="mt-12 rounded-2xl border border-line bg-surface/70 p-6 sm:p-8">
+            <h2 className="font-display text-2xl font-bold text-white">Características principales</h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {project.highlights.map((item) => (
+                <li key={item} className="flex gap-3 text-slate-300">
+                  <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section className="mt-6 rounded-2xl border border-line bg-surface/70 p-6 sm:p-8">
           <h2 className="font-display text-2xl font-bold text-white">Tecnologías utilizadas</h2>
           <ul className="mt-5 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (

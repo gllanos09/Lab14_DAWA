@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1030"/>
+      <stop offset="1" stop-color="#1b0f3d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#7c6cff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#7c6cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+
+  <!-- Marca -->
+  <text x="120" y="420" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="150" font-weight="800" fill="#ffffff" letter-spacing="6">VAEL</text>
+  <rect x="124" y="455" width="220" height="10" rx="5" fill="url(#accent)"/>
+  <text x="120" y="540" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" fill="#cbd5e1">Reclutamiento inteligente con IA</text>
+
+  <!-- Pills -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#e2e8f0">
+    <rect x="120" y="610" width="200" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="220" y="647" text-anchor="middle">Análisis CV</text>
+    <rect x="336" y="610" width="200" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="436" y="647" text-anchor="middle">Entrevistas</text>
+    <rect x="552" y="610" width="170" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="637" y="647" text-anchor="middle">Ranking</text>
+  </g>
+
+  <!-- Tarjeta de candidatos -->
+  <g transform="translate(940 230)">
+    <rect width="540" height="560" rx="32" fill="#0f1733" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="40" y="70" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Ranking de candidatos</text>
+    <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+      <g transform="translate(40 120)">
+        <circle cx="32" cy="32" r="32" fill="#4f8cff"/>
+        <rect x="88" y="12" width="200" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="88" y="40" width="300" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="88" y="40" width="270" height="12" rx="6" fill="url(#accent)"/>
+        <text x="460" y="40" font-size="26" font-weight="700" fill="#a5f3fc" text-anchor="end">94</text>
+      </g>
+      <g transform="translate(40 230)">
+        <circle cx="32" cy="32" r="32" fill="#7c6cff"/>
+        <rect x="88" y="12" width="170" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="88" y="40" width="300" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="88" y="40" width="240" height="12" rx="6" fill="url(#accent)"/>
+        <text x="460" y="40" font-size="26" font-weight="700" fill="#a5f3fc" text-anchor="end">87</text>
+      </g>
+      <g transform="translate(40 340)">
+        <circle cx="32" cy="32" r="32" fill="#22c55e"/>
+        <rect x="88" y="12" width="220" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="88" y="40" width="300" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="88" y="40" width="200" height="12" rx="6" fill="url(#accent)"/>
+        <text x="460" y="40" font-size="26" font-weight="700" fill="#a5f3fc" text-anchor="end">76</text>
+      </g>
+    </g>
+    <rect x="40" y="460" width="460" height="60" rx="30" fill="url(#accent)"/>
+    <text x="270" y="500" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Evaluado con IA</text>
+  </g>
+</svg>

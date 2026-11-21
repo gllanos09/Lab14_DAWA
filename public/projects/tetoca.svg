@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#03231a"/>
+      <stop offset="1" stop-color="#0b1a14"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.35" r="0.6">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+
+  <text x="120" y="420" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="140" font-weight="800" fill="#ffffff">TeToca</text>
+  <rect x="124" y="455" width="220" height="10" rx="5" fill="url(#accent)"/>
+  <text x="120" y="540" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" fill="#cbd5e1">Inventario inteligente para negocios</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#e2e8f0">
+    <rect x="120" y="610" width="170" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="205" y="647" text-anchor="middle">Kotlin</text>
+    <rect x="306" y="610" width="200" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="406" y="647" text-anchor="middle">Compose</text>
+    <rect x="522" y="610" width="190" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="617" y="647" text-anchor="middle">Firebase</text>
+  </g>
+
+  <!-- Teléfono -->
+  <g transform="translate(1040 120)">
+    <rect width="380" height="760" rx="56" fill="#0d1f19" stroke="#ffffff" stroke-opacity="0.18" stroke-width="3"/>
+    <rect x="150" y="24" width="80" height="14" rx="7" fill="#ffffff" fill-opacity="0.15"/>
+    <text x="36" y="110" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">Inventario</text>
+    <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+      <g transform="translate(28 150)">
+        <rect width="324" height="110" rx="22" fill="#ffffff" fill-opacity="0.06"/>
+        <rect x="20" y="28" width="140" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="20" y="60" width="200" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="20" y="60" width="170" height="12" rx="6" fill="#10b981"/>
+        <text x="300" y="50" font-size="22" font-weight="700" fill="#6ee7b7" text-anchor="end">OK</text>
+      </g>
+      <g transform="translate(28 280)">
+        <rect width="324" height="110" rx="22" fill="#f59e0b" fill-opacity="0.12" stroke="#f59e0b" stroke-opacity="0.5"/>
+        <rect x="20" y="28" width="120" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="20" y="60" width="200" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="20" y="60" width="40" height="12" rx="6" fill="#f59e0b"/>
+        <text x="300" y="50" font-size="22" font-weight="700" fill="#fcd34d" text-anchor="end">Bajo</text>
+      </g>
+      <g transform="translate(28 410)">
+        <rect width="324" height="110" rx="22" fill="#ffffff" fill-opacity="0.06"/>
+        <rect x="20" y="28" width="160" height="16" rx="8" fill="#e2e8f0" fill-opacity="0.8"/>
+        <rect x="20" y="60" width="200" height="12" rx="6" fill="#ffffff" fill-opacity="0.15"/>
+        <rect x="20" y="60" width="130" height="12" rx="6" fill="#10b981"/>
+        <text x="300" y="50" font-size="22" font-weight="700" fill="#6ee7b7" text-anchor="end">OK</text>
+      </g>
+    </g>
+    <rect x="28" y="620" width="324" height="72" rx="36" fill="#10b981"/>
+    <text x="190" y="665" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#03231a" text-anchor="middle">Pedir por WhatsApp</text>
+  </g>
+</svg>

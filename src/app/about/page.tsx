@@ -20,7 +20,11 @@ const skillGroups = [
   },
   {
     title: 'Backend',
-    skills: ['Node.js & Express', 'PostgreSQL', 'MongoDB', 'APIs REST'],
+    skills: ['Python & FastAPI', 'Node.js & Express', 'PostgreSQL', 'MongoDB', 'APIs REST'],
+  },
+  {
+    title: 'Móvil',
+    skills: ['Kotlin', 'Jetpack Compose', 'Room & Retrofit', 'Swift'],
   },
   {
     title: 'Herramientas',

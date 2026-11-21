@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1e"/>
+      <stop offset="1" stop-color="#1a1020"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.4" r="0.6">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#facc15"/>
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#grid)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+
+  <text x="120" y="400" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="130" font-weight="800" fill="#ffffff">MetroLima</text>
+  <rect x="124" y="435" width="220" height="10" rx="5" fill="url(#accent)"/>
+  <text x="120" y="520" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="40" fill="#cbd5e1">Consulta del Metro desde la terminal</text>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" fill="#e2e8f0">
+    <rect x="120" y="590" width="160" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="200" y="627" text-anchor="middle">Swift</text>
+    <rect x="296" y="590" width="130" height="56" rx="28" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.15"/>
+    <text x="361" y="627" text-anchor="middle">CLI</text>
+  </g>
+
+  <!-- Ventana de terminal -->
+  <g transform="translate(900 200)">
+    <rect width="600" height="420" rx="24" fill="#0b0f19" stroke="#ffffff" stroke-opacity="0.14"/>
+    <rect width="600" height="56" rx="24" fill="#ffffff" fill-opacity="0.06"/>
+    <circle cx="36" cy="28" r="9" fill="#f87171"/>
+    <circle cx="66" cy="28" r="9" fill="#fbbf24"/>
+    <circle cx="96" cy="28" r="9" fill="#34d399"/>
+    <g font-family="Consolas, Menlo, monospace" font-size="24">
+      <text x="32" y="120" fill="#34d399">$ <tspan fill="#e2e8f0">metrolima ruta</tspan></text>
+      <text x="32" y="170" fill="#94a3b8">Origen:  <tspan fill="#fdba74">Villa El Salvador</tspan></text>
+      <text x="32" y="210" fill="#94a3b8">Destino: <tspan fill="#fdba74">Bayóvar</tspan></text>
+      <text x="32" y="260" fill="#94a3b8">Línea:   <tspan fill="#facc15">1</tspan></text>
+      <text x="32" y="300" fill="#94a3b8">Estaciones: <tspan fill="#e2e8f0">26</tspan></text>
+      <text x="32" y="360" fill="#34d399">$ <tspan fill="#e2e8f0">_</tspan></text>
+    </g>
+  </g>
+
+  <!-- Línea de metro -->
+  <g transform="translate(900 720)">
+    <rect x="0" y="22" width="600" height="12" rx="6" fill="url(#accent)"/>
+    <circle cx="20" cy="28" r="20" fill="#0a0f1e" stroke="#f97316" stroke-width="8"/>
+    <circle cx="170" cy="28" r="16" fill="#0a0f1e" stroke="#fb923c" stroke-width="6"/>
+    <circle cx="320" cy="28" r="16" fill="#0a0f1e" stroke="#fbbf24" stroke-width="6"/>
+    <circle cx="450" cy="28" r="16" fill="#0a0f1e" stroke="#facc15" stroke-width="6"/>
+    <circle cx="580" cy="28" r="20" fill="#0a0f1e" stroke="#facc15" stroke-width="8"/>
+  </g>
+</svg>

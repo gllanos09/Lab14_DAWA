@@ -24,7 +24,7 @@ export default function ProjectsPage() {
           as="h1"
           eyebrow="Portafolio"
           title="Mis proyectos"
-          description="Una colección de proyectos en los que he trabajado, desde e-commerce hasta dashboards en tiempo real."
+          description="Proyectos en los que he trabajado: desde una plataforma de reclutamiento con IA hasta apps móviles y herramientas de terminal."
         />
       </div>
 

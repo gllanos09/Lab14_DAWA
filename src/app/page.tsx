@@ -9,10 +9,10 @@ const stack = [
   'Next.js',
   'React',
   'TypeScript',
-  'Node.js',
-  'Tailwind CSS',
+  'Python',
+  'FastAPI',
+  'Kotlin',
   'PostgreSQL',
-  'MongoDB',
   'Docker',
   'AWS',
 ];
