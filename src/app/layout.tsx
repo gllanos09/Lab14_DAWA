@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +9,12 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display-face',
 });
 
 export const metadata: Metadata = {
@@ -37,9 +43,9 @@ export const metadata: Metadata = {
     siteName: personalInfo.name,
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/avatar.png',
+        width: 1254,
+        height: 1254,
         alt: `${personalInfo.name} - Portafolio`,
       },
     ],
@@ -48,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${personalInfo.name} - ${personalInfo.title}`,
     description: personalInfo.description,
-    images: ['/og-image.jpg'],
+    images: ['/avatar.png'],
     creator: '@tuusuario',
   },
   robots: {
@@ -73,10 +79,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={inter.variable}>
-      <body className="flex flex-col min-h-screen">
+    <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <body className="flex min-h-screen flex-col bg-ink font-sans text-slate-200">
         <Header />
-        <main className="grow bg-gray-50">{children}</main>
+        <main className="bg-backdrop grow overflow-x-clip">{children}</main>
         <Footer />
       </body>
     </html>

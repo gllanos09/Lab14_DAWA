@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { projects } from '@/lib/data';
+import { ArrowLeftIcon, ExternalIcon, GitHubIcon } from '@/components/icons';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -51,57 +52,36 @@ export default async function ProjectDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:py-20">
       <Link
         href="/projects"
-        className="text-blue-600 hover:underline mb-6 inline-block"
+        className="group inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white"
       >
-        ← Volver a Proyectos
+        <ArrowLeftIcon className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+        Volver a proyectos
       </Link>
 
-      <article>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      <article className="mt-8 animate-fade-up">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+          Caso de estudio
+        </p>
+        <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl">
           {project.title}
         </h1>
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-400">
+          {project.description}
+        </p>
 
-        <div className="relative w-full h-96 mb-8 rounded-lg overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-          />
-        </div>
-
-        <p className="text-lg text-gray-700 mb-6">{project.description}</p>
-
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">
-            Tecnologías Utilizadas
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-4">
+        <div className="mt-8 flex flex-wrap gap-3">
           {project.demoUrl && (
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
+              className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-accent to-accent-2 px-6 py-3 font-semibold text-white shadow-lg shadow-accent/25"
             >
-              Ver Demo
+              Ver demo
+              <ExternalIcon />
             </a>
           )}
           {project.githubUrl && (
@@ -109,12 +89,38 @@ export default async function ProjectDetailPage({ params }: Props) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
             >
-              Ver Código
+              <GitHubIcon />
+              Ver código
             </a>
           )}
         </div>
+
+        <div className="relative mt-12 aspect-video overflow-hidden rounded-3xl border border-line shadow-2xl shadow-accent/10">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            preload
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 1024px"
+          />
+        </div>
+
+        <section className="mt-12 rounded-2xl border border-line bg-surface/70 p-6 sm:p-8">
+          <h2 className="font-display text-2xl font-bold text-white">Tecnologías utilizadas</h2>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <li
+                key={tech}
+                className="rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-medium text-blue-200"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
+        </section>
       </article>
     </div>
   );

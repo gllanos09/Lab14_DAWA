@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import ContactForm from '@/components/ContactForm';
+import SectionHeading from '@/components/SectionHeading';
 import { personalInfo } from '@/lib/data';
+import { GitHubIcon, LinkedInIcon, MailIcon } from '@/components/icons';
 
 export const metadata: Metadata = {
   title: 'Contacto',
@@ -22,58 +24,71 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const channels = [
+    {
+      label: 'Email',
+      value: personalInfo.email,
+      href: `mailto:${personalInfo.email}`,
+      icon: MailIcon,
+      external: false,
+    },
+    {
+      label: 'GitHub',
+      value: personalInfo.github.replace('https://', ''),
+      href: personalInfo.github,
+      icon: GitHubIcon,
+      external: true,
+    },
+    {
+      label: 'LinkedIn',
+      value: personalInfo.linkedin.replace('https://', ''),
+      href: personalInfo.linkedin,
+      icon: LinkedInIcon,
+      external: true,
+    },
+  ];
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Contacto</h1>
-        <p className="text-lg text-gray-600 mb-10">
-          ¿Tienes un proyecto en mente o quieres colaborar? Escríbeme y te
-          responderé lo antes posible.
-        </p>
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div className="animate-fade-up">
+          <SectionHeading
+            as="h1"
+            eyebrow="Contacto"
+            title="Hablemos de tu próximo proyecto"
+            description="¿Tienes una idea, una propuesta o quieres colaborar? Escríbeme y te responderé lo antes posible."
+          />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <aside className="md:col-span-1 space-y-6">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-lg font-semibold text-gray-900 mb-2">Email</h2>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="text-blue-600 hover:underline break-all"
-              >
-                {personalInfo.email}
-              </a>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h2 className="text-lg font-semibold text-gray-900 mb-2">Redes</h2>
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href={personalInfo.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
-                  >
-                    GitHub
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={personalInfo.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
-                  >
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </aside>
-
-          <section className="md:col-span-2 bg-white p-6 md:p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Envíame un mensaje</h2>
-            <ContactForm />
-          </section>
+          <ul className="mt-10 space-y-3">
+            {channels.map(({ label, value, href, icon: Icon, external }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="group flex items-center gap-4 rounded-2xl border border-line bg-surface/70 p-4 transition hover:border-accent/50"
+                >
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/10 text-accent">
+                    <Icon />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm text-slate-400">{label}</span>
+                    <span className="block truncate font-medium text-white group-hover:text-blue-200">
+                      {value}
+                    </span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
+
+        <section className="rounded-3xl border border-line bg-surface/80 p-6 shadow-2xl shadow-accent/5 sm:p-10">
+          <h2 className="font-display text-2xl font-bold text-white">Envíame un mensaje</h2>
+          <p className="mt-2 text-sm text-slate-400">Todos los campos son obligatorios.</p>
+          <div className="mt-8">
+            <ContactForm />
+          </div>
+        </section>
       </div>
     </div>
   );
